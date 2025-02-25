@@ -1,0 +1,148 @@
+<html>
+ <head>
+  <title>Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
+  <style>
+   body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .galaxy-background {
+            background: url('https://www.publicdomainpictures.net/pictures/320000/velka/background-image.png') repeat;
+            background-size: cover;
+            animation: moveBackground 20s linear infinite;
+        }
+        @keyframes moveBackground {
+            0% { background-position: 0 0; }
+            100% { background-position: 1000px 1000px; }
+        }
+        .moving-background {
+            background: url('https://www.publicdomainpictures.net/pictures/320000/velka/sky-background.jpg') repeat-x;
+            background-size: cover;
+            animation: moveSky 30s linear infinite;
+        }
+        @keyframes moveSky {
+            0% { background-position: 0 0; }
+            100% { background-position: -2000px 0; }
+        }
+        .bird {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50px;
+            height: 50px;
+            background: url('https://www.publicdomainpictures.net/pictures/320000/velka/bird.png') no-repeat center center;
+            background-size: contain;
+            animation: fly 10s linear infinite;
+        }
+        @keyframes fly {
+            0% { transform: translate(0, 0); }
+            50% { transform: translate(100vw, 50vh); }
+            100% { transform: translate(0, 0); }
+        }
+        .bird-hover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50px;
+            height: 50px;
+            background: url('https://www.publicdomainpictures.net/pictures/320000/velka/bird.png') no-repeat center center;
+            background-size: contain;
+            animation: hover 5s infinite;
+        }
+        @keyframes hover {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        .hero-image {
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+        .hero-image:hover {
+            transform: scale(1.05);
+        }
+        .hero-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .hero-image:hover::after {
+            opacity: 1;
+        }
+        .hero-image:hover img {
+            filter: brightness(0.7);
+        }
+  </style>
+ </head>
+ <body class="bg-gray-100">
+  <!-- Navbar -->
+  <nav class="bg-gray-900 text-white p-4">
+   <div class="container mx-auto flex justify-between items-center">
+    <div class="text-2xl font-bold">Pritam</div>
+    <ul class="flex space-x-6">
+     <li><a class="hover:text-red-500" href="#">Home</a></li>
+     <li><a class="hover:text-red-500" href="#about">About</a></li>
+     <li><a class="hover:text-red-500" href="#">Contact</a></li>
+    </ul>
+   </div>
+  </nav>
+  <!-- Hero Section -->
+  <section class="galaxy-background text-white py-20 relative">
+   <div class="bird"></div>
+   <div class="container mx-auto flex flex-col md:flex-row items-center">
+    <div class="md:w-1/2 relative">
+     <p class="text-red-500 text-xl">HELLO,</p>
+     <h1 class="text-5xl font-bold my-4 relative">
+      <span class="text-white">Dr. Pritam Kumar Bain</span>
+      <div class="bird-hover" style="top: -50px; left: 50%; transform: translateX(-50%);"></div>
+     </h1>
+     <h2 class="text-2xl font-bold my-2 text-yellow-500">M.B.B.S (SSMC)</h2>
+     <p class="text-gray-400 mb-6">I have graduated from Sir Salimullah Medical College, Dhaka. And now working as an Intern doctor in the same medical college.</p>
+     <div class="flex space-x-4">
+      <a class="bg-red-500 text-white px-6 py-2 rounded-full" href="https://wa.me/+8801959783031?text=Hello%20Dr.%20Pritam,%20Can%20I%20take%20some%20time?" target="_blank">Contact</a>
+     </div>
+    </div>
+    <div class="md:w-1/2 mt-10 md:mt-0">
+     <a class="hero-image" href="https://www.facebook.com/share/1EVK4BbntB/" target="_blank">
+      <img alt="Portrait of Pritam Kumar Bain, a modern web designer, wearing glasses and a plaid shirt, with arms crossed" class="rounded-full mx-auto" height="400" src="images/hero-image.jpg" width="400"/>
+     </a>
+    </div>
+   </div>
+  </section>
+  <!-- About Section -->
+  <section id="about" class="moving-background text-black py-20 relative">
+   <div class="container mx-auto flex flex-col md:flex-row items-center relative z-10">
+    <div class="md:w-1/2">
+     <img alt="Portrait of Pritam Kumar Bain, a modern web designer, smiling and looking at the camera" class="rounded-full mx-auto" height="400" src="images/about-image.jpg" width="400"/>
+    </div>
+    <div class="md:w-1/2 mt-10 md:mt-0">
+     <p class="text-gray-600 mb-4">I have successfully graduated from Sir Salimullah Medical College, Dhaka, one of the most prestigious medical institutions in Bangladesh. Currently, I am serving as an Intern Doctor at the same medical college, where I am gaining hands-on clinical experience and refining my medical skills.</p>
+     <p class="text-gray-600 mb-4">Throughout my academic journey, I have been dedicated to acquiring in-depth knowledge in the field of medicine and developing the essential clinical competencies required to provide high-quality patient care. My time at Sir Salimullah Medical College has been instrumental in shaping my understanding of the complexities of human health, disease management, and medical ethics.</p>
+     <p class="text-gray-600 mb-4">As an Intern Doctor, I am actively involved in patient diagnosis, treatment planning, and medical procedures under the supervision of experienced physicians. This invaluable experience is not only enhancing my practical skills but also reinforcing my commitment to serving humanity through medicine.</p>
+     <p class="text-gray-600 mb-4">My passion for healthcare, continuous learning, and dedication to patient welfare drive me to strive for excellence in this field. I look forward to expanding my medical expertise and making meaningful contributions to the healthcare system.</p>
+    </div>
+   </div>
+  </section>
+  <!-- Contact Section -->
+  <section class="bg-white py-20">
+   <div class="container mx-auto text-center">
+    <h2 class="text-4xl font-bold mb-10">Get In Touch</h2>
+    <p class="text-gray-600 mb-6">Feel free to reach out to me for any inquiries or collaborations.</p>
+    <a class="bg-red-500 text-white px-6 py-2 rounded-full" href="https://wa.me/+8801959783031?text=Hello%20Dr.%20Pritam,%20Can%20I%20take%20some%20time?" target="_blank">Contact Me on WhatsApp</a>
+   </div>
+  </section>
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-6">
+   <div class="container mx-auto text-center">
+    <p class="text-gray-500">© 2025 Pritam Kumar Bain. All rights reserved.</p>
+   </div>
+  </footer>
+ </body>
+</html>
